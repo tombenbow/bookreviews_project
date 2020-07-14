@@ -1,0 +1,21 @@
+{
+  "name": "Backend-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bookreviews.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
