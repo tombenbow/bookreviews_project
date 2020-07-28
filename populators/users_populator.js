@@ -23,12 +23,12 @@ const returnRandomUser = () => {
 
 function writeUsersFile() {
   let theUsers = [];
-  for (let i = 1; i < 12; i++) {
+  for (let i = 1; i < 15; i++) {
     returnRandomUser().then((user) => {
       user.member_id = i;
       theUsers.push(user);
       if (theUsers.length == 10) {
-        fs.writeFile("../db/users.json", JSON.stringify(theUsers), function (err, data) {
+        fs.writeFile("../db/data/dev-data/users.json", JSON.stringify(theUsers), function (err, data) {
           if (err) console.log(err);
         });
       }
