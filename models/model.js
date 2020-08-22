@@ -266,17 +266,18 @@ const commentVotes = (reqBody, reqParams) => {
 
 const deleteComment = (reqBody, reqParams) => {
   if (reqBody.hasOwnProperty("username")) {
+    console.log(reqParams.comment_key)
     return connection
     .select("*")
     .from("comments")
-    .where("comment_key", "=", parseInt(reqParams.comment_id))
+    .where("comment_key", "=", parseInt(reqParams.comment_key))
     .returning('*')
     .then(theComment => {
       if (theComment[0].username == reqBody.username) {
         return connection
         .del("*")
         .from("comments")
-        .where("comment_key", "=", reqParams.comment_id)
+        .where("comment_key", "=", reqParams.comment_key)
         .returning('*')
       }
       else {

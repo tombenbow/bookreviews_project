@@ -80,9 +80,9 @@ exports.changeCommentVotes = (req, res, next) => {
 }
 
 exports.deleteComment = (req, res, next) => {
+  console.log(req.params)
+  console.log(req.body)
   deleteComment(req.body, req.params).then(data => {
-    console.log(data)
-    console.log(data.length)
     data.length > 0 ?
     res.status(204).send("comment deleted") : next({status : 404});
   })

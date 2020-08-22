@@ -24,35 +24,35 @@ app.use(express.json());
 
 app
   .route("/api/users/allusers")
-  .get(sendAllUsers) //completed with error handler
+  .get(sendAllUsers) //QAd
   .all(send405Error);
 app.route("/api/topics")
-  .get(sendAllTopics) //completed with error handler
+  .get(sendAllTopics) //QAd
   .all(send405Error);
 app.route("/api/users/:username")
-  .get(getThatUser) //completed with error handler
+  .get(getThatUser) //QAd
   .all(send405Error); 
 app
   .route("/api/bookreviews/:review_id")
-  .get(getThatReview) //completed with error handler
-  .patch(changeReviewVotes) //done with error handlers
+  .get(getThatReview) //QAd
+  .patch(changeReviewVotes) //QAd
   .all(send405Error); 
 app
   .route("/api/bookreviews/:review_id/comments")
-  .post(postNewComment) //completed, with EH
-  .get(getThatReviewsComments) //completed, no need for error handler
+  .post(postNewComment) //QAd
+  .get(getThatReviewsComments) //QAd
   .all(send405Error); 
 app
   .route("/api/bookreviews")
-  .get(getAllBookReviews) //completed w EH
+  .get(getAllBookReviews) //QAd
   .all(send405Error); 
 app.route("/api")
-  .get(getEndpoints) //completed w EH
+  .get(getEndpoints) //QAd
   .all(send405Error); 
 app
   .route("/api/comments/:comment_key")
-  .patch(changeCommentVotes) //done with error handlers
-  .delete(deleteComment) //done with error handlers
+  .patch(changeCommentVotes) //QAd
+  .delete(deleteComment) //QAd
   .all(send405Error);
 
 //ERROR HANDLERS
