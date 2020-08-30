@@ -4,12 +4,20 @@ const  data  = require('../data/index');
 dev-data/test-data folders into your sql files. */
 
   exports.seed = function(knex) {
-      return knex
-      .insert(data.topics.topics)
-      .into('topics')
-      .returning('*')
+    return knex.migrate
+      .rollback()
+      .then(() => {
+        return knex.migrate.latest();
+      })
+      .then(() => {
+        return knex
+        .insert(data.topics.topics)
+        .into('topics')
+        .returning('*')
+      })
       .then(() =>{
-        return knex.insert(data.users.users)
+        return knex
+        .insert(data.users.users)
         .into('users')
         .returning('*')
       })
