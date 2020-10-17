@@ -238,7 +238,7 @@ const commentVotes = (reqBody, reqParams) => {
           else if (reqBody.vote == "down") {
             return connection("comments")
             .where("comment_key", reqParams.comment_key)
-            .update("comment_votes", (comment[0].comment_votes +1))
+            .update("comment_votes", (comment[0].comment_votes -1))
             .returning("*")
             .then(comment => {
               resolve(comment)
