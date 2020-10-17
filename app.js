@@ -1,5 +1,7 @@
 const express = require("express");
+cors = require("cors");
 const app = express();
+const corsOptions = {origin: true, credentials: true}
 const {
   sendAllUsers,
   sendAllTopics,
@@ -21,6 +23,7 @@ const {
 } = require("./error_messages.js");
 
 app.use(express.json());
+app.options("*", cors(corsOptions))
 
 app
   .route("/api/users/allusers")

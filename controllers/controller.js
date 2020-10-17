@@ -51,7 +51,6 @@ exports.getThatReviewsComments = (req, res, next) => {
 
 exports.postNewComment = (req, res, next) => {
   newComment(req.params, req.body).then(comment => {
-    console.log(999, comment)
     res.status(200).send(comment)
   })
   .catch(next)
@@ -66,7 +65,6 @@ exports.getEndpoints = (req, res, next) => {
 
 exports.changeReviewVotes = (req, res, next) => {
   reviewVotes(req.body, req.params).then(data => {
-    console.log(data)
     res.status(200).send(data)
   })
   .catch(next)
@@ -80,8 +78,6 @@ exports.changeCommentVotes = (req, res, next) => {
 }
 
 exports.deleteComment = (req, res, next) => {
-  console.log(req.params)
-  console.log(req.body)
   deleteComment(req.body, req.params).then(data => {
     data.length > 0 ?
     res.status(204).send("comment deleted") : next({status : 404});

@@ -70,7 +70,6 @@ const fetchAllReviews = (sort_by, order, username, topic) => {
     .from("book_reviews")
     .orderBy(sort_by || "review_id", order || "desc")
     .modify(reviews => {
-      console.log(reviews)
       if (topic) {
         return reviews.where("topic_name", "=", topic)
       }
@@ -79,7 +78,6 @@ const fetchAllReviews = (sort_by, order, username, topic) => {
       }
     })
     .then((allBookReviews) => {
-      console.log(allBookReviews.length)
       if (allBookReviews.length > 0) {
         resolve ({ all_bookreviews: allBookReviews });
       }
@@ -132,7 +130,6 @@ const newComment = (reqParams, reqBody) => {
               .into('comments')
               .returning('*')
               .then(insertedComment => {
-                console.log(insertedComment)
                 resolve(insertedComment)
               })
             }
@@ -175,7 +172,6 @@ const reviewVotes = (reqBody, reqParams) => {
       .where("review_id", "=", reqParams.review_id)
       .returning('*')
       .then(review => {
-        console.log(review.length)
         if (review.length == 0) {
           reject({status : 404})
         }
@@ -184,15 +180,12 @@ const reviewVotes = (reqBody, reqParams) => {
         }
       })
       .then(review => {
-        console.log(review)
           if (reqBody.vote == "up") {
-            console.log("yes")
             return connection("book_reviews")
             .where("review_id", reqParams.review_id)
             .update("review_votes", (review[0].review_votes +1))
             .returning("*")
             .then(review => {
-              console.log(review)
               resolve(review)
             })
           }
@@ -234,7 +227,6 @@ const commentVotes = (reqBody, reqParams) => {
       })
       .then(comment => {
           if (reqBody.vote == "up") {
-            console.log("yes")
             return connection("comments")
             .where("comment_key", reqParams.comment_key)
             .update("comment_votes", (comment[0].comment_votes +1))
@@ -244,7 +236,6 @@ const commentVotes = (reqBody, reqParams) => {
             })
           }
           else if (reqBody.vote == "down") {
-            console.log("yes")
             return connection("comments")
             .where("comment_key", reqParams.comment_key)
             .update("comment_votes", (comment[0].comment_votes +1))
@@ -266,7 +257,6 @@ const commentVotes = (reqBody, reqParams) => {
 
 const deleteComment = (reqBody, reqParams) => {
   if (reqBody.hasOwnProperty("username")) {
-    console.log(reqParams.comment_key)
     return connection
     .select("*")
     .from("comments")
