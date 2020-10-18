@@ -255,15 +255,15 @@ const commentVotes = (reqBody, reqParams) => {
 })
 }
 
-const deleteComment = (reqBody, reqParams) => {
-  if (reqBody.hasOwnProperty("username")) {
+const deleteComment = (reqParams) => {
+  if (reqParams.hasOwnProperty("username")) {
     return connection
     .select("*")
     .from("comments")
     .where("comment_key", "=", parseInt(reqParams.comment_key))
     .returning('*')
     .then(theComment => {
-      if (theComment[0].username == reqBody.username) {
+      if (theComment[0].username == reqParams.username) {
         return connection
         .del("*")
         .from("comments")
