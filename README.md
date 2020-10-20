@@ -3,7 +3,7 @@ This repo holds the backend for the website Bookreviews.io, which is a book revi
 
 The API is hosted on Heroku and can be accessed via the following URL: https://bookreview-project.herokuapp.com/api.
 
-# Sourcing of Data
+### Sourcing of Data
 The book reviews themselves were randomly selected from Amazon.
 
 Topics & Topic Descriptions entered manually.
