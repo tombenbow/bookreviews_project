@@ -5,11 +5,15 @@ The API is hosted on Heroku and can be accessed via the following URL: https://b
 
 # Sourcing of Data
 The book reviews themselves were randomly selected from Amazon.
-Book Review r
+
 Topics & Topic Descriptions entered manually.
+
 book_rating_out_of_5, year_book_written_in, review_votes values assigned to Book Reviews randomly.
+
 comment_votes value assigned to comments randomly.
-API for comment: ASDFast Lorem Ipsum API @ asdfast.beobit.net
+
+API for comment_body: ASDFast Lorem Ipsum API @ asdfast.beobit.net
+
 API for users: Random User Generator @ randomuser.me
 
 # Testing
