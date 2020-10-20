@@ -16,10 +16,10 @@ API for comment_body: ASDFast Lorem Ipsum API @ asdfast.beobit.net
 
 API for users: Random User Generator @ randomuser.me
 
-# Testing
+### Testing
 The project was tested with Mocha, Chai, and Supertest.
 
-# Links to Frontend
+### Links to Frontend
 Link to FE repo: https://github.com/tombenbow/frontend-project
 
 LINK to hosted FE: https://tombenbow-br-project.herokuapp.com/ 
