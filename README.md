@@ -2,6 +2,7 @@
 This repo holds the backend for the website Bookreviews.io, which is a book reviews website (links to hosted FE and FE repo are below). The data is stored in a PSQL database and is accessible via a RESTful API. The API is hosted on Heroku.
 
   ### Endpoints
+  ```bash 
   "available_endpoints": {
     "('/api/users/allusers').get": "returns all user objects. Key: all_users",
     "('/api/topics').get": "returns all topics. Key: all_topics",
@@ -14,6 +15,7 @@ This repo holds the backend for the website Bookreviews.io, which is a book revi
     "('/api/comments/:comment_id').patch": "allows you to upvote or downvote the specified comment. Send object with vote key ('up'/'down')",
     "('/api/comments/:comment_id'.delete": "deletes the specified comment. Must pass the comment owner's username in the req query under the key 'username'. If         comment is successfully deleted will return error message 204."
 }
+```
 
   ### Sourcing of Data
 The book reviews themselves were randomly selected from Amazon.
