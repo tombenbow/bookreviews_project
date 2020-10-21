@@ -28,3 +28,5 @@ Tests can be found in the the specs folder.
 Link to FE repo: https://github.com/tombenbow/frontend-project
 
 Link to hosted FE: https://tombenbow-br-project.herokuapp.com/ 
+
+  ### ENTER INSTRUCTIONS TO RUN LOCALLY
