@@ -1,6 +1,8 @@
 # bookreviews_project
 This repo holds the backend for a book reviews website, Bookreviews.io (links to hosted FE and FE repo are below). The data is stored in a PostgreSQL database and is accessible via a RESTful API. The API and database are hosted on Heroku.
 
+The api itself is hosted on the following url: https://bookreview-project.herokuapp.com/api
+
   ### Endpoints
   ```bash 
   "available_endpoints": {
